@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-public class UserController {
-//     @Autowired 
-//     private AuthenticationManager authenticationManager;
-//     @Autowired 
-//     private UserService userService;
+public class UserAccountController {
+	
+	@RequestMapping("/logout")
+	public String logout() {
+		return "byebye";
+	}
 }
