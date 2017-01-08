@@ -1,4 +1,4 @@
-package com.metalbird.config;
+package com.metalbird.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

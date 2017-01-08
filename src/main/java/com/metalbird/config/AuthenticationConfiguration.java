@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.authentication.configurers
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.metalbird.service.UserAccountService;
+import com.metalbird.util.ASPasswordEncoder;
 
 /**
  * custom authentication.

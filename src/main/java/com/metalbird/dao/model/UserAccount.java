@@ -21,11 +21,12 @@ import javax.persistence.TemporalType;
  * @author YoungMin
  * User information entity.
  */
-@Entity(name="info")
-@Table(name="user_account")
+@Entity(name="user_account")
+@Table(name="user_account", schema="info")
 public class UserAccount {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column
 	private long id;
 	
 	@Column(unique=true)

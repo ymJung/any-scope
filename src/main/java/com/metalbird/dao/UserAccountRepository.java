@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.metalbird.dao.model.UserAccount;
 
 @Repository
-public interface UserAccountRepository extends JpaRepository<UserAccount, Long>{
-	UserAccount findOneByAccountId(String accountId);
+public interface UserAccountRepository extends JpaRepository<UserAccount, Long> {
+	UserAccount findOneByAccount(String account);
 }
