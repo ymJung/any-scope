@@ -4,11 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.mockito.runners.MockitoJUnitRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@RunWith(MockitoJUnitRunner.class)
 public class ASPasswordEncoderTest {
 	private ASPasswordEncoder asPasswordEncoder;
 	@Before
@@ -18,7 +16,7 @@ public class ASPasswordEncoderTest {
 	@Test
 	public void testEncode() {
 		String encode = asPasswordEncoder.encode("admin");
-		System.out.println(encode);
+		Assert.assertFalse(encode.isEmpty());
 	}
 	@Test
 	public void testMatches() {

@@ -4,18 +4,20 @@
  */
 package com.metalbird.controller;
 
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-//import com.metalbird.service.UserService;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping
 public class UserAccountController {
 	
-	@RequestMapping("/logout")
+	@RequestMapping("/user/fail")
+	public ModelAndView fail() {
+		ModelAndView mav = new ModelAndView("user/fail");
+		return mav;
+	}
+	@RequestMapping("/user/logout")
 	public String logout() {
 		return "byebye";
 	}
