@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')	")
 		.antMatchers("/storage/**").access("hasRole('ROLE_ADMIN')");
 		
-		http.formLogin().loginProcessingUrl("/user/login");
+		http.formLogin().loginProcessingUrl("/user/login").failureForwardUrl("/user/fail");
 		http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")).logoutSuccessUrl("/");
 		
 	}

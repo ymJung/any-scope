@@ -15,9 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
  *
  */
 @Controller
-@RequestMapping("/open")
+@RequestMapping
 public class OpenController {
-	@RequestMapping(value="/view", method=RequestMethod.GET)
+	@RequestMapping(value="/open/view", method=RequestMethod.GET)
 	public ModelAndView main() {
 		ModelAndView mav = new ModelAndView("open/view");
 		mav.addObject("message", "hello ^^");
