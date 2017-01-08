@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HelloController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public ModelAndView main() {
+	public ModelAndView hello() {
 		ModelAndView mav = new ModelAndView("hello");
 		mav.addObject("message", "hello ^^");
 		mav.addObject("time", new Date());

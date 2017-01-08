@@ -48,7 +48,10 @@ public class UserAccount {
 	
 	@Column
 	@Temporal(TemporalType.DATE)
-	private Date date;
+	private Date createdAt;
+	@Column
+	@Temporal(TemporalType.DATE)
+	private Date modifiedAt;
 	
 	enum Grade {
 		NORMAL, HEAVY, ADMIN
@@ -81,12 +84,6 @@ public class UserAccount {
 	public void setGrade(Grade grade) {
 		this.grade = grade;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
 	public long getId() {
 		return id;
 	}
@@ -95,5 +92,17 @@ public class UserAccount {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getModifiedAt() {
+		return modifiedAt;
+	}
+	public void setModifiedAt(Date modifiedAt) {
+		this.modifiedAt = modifiedAt;
 	}
 }

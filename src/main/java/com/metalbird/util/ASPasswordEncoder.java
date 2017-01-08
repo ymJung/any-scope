@@ -2,19 +2,21 @@ package com.metalbird.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Objects;
 
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class ASPasswordEncoder implements PasswordEncoder {
-	private static final String EMPTY_STRING = ""; 
+	private static final String EMPTY_STRING = "";
+	@Value("${pass_salt}")
+	private String SALT = "+SALT";
 	
 	private String getHash(CharSequence input) {
 		try {
-			
 			MessageDigest md = MessageDigest.getInstance("SHA-512");
 			md.update(input.toString().getBytes());
-			return new String(md.digest());
+			return Base64.encodeBase64String(md.digest());
 		} catch (NoSuchAlgorithmException ne) {
 			return EMPTY_STRING;
 		}
@@ -22,11 +24,12 @@ public class ASPasswordEncoder implements PasswordEncoder {
 
 	@Override
 	public String encode(CharSequence rawPassword) {
-		return getHash(rawPassword);
+		return getHash(rawPassword + SALT);
 	}
 
 	@Override
 	public boolean matches(CharSequence rawPassword, String encodedPassword) {
-		return Objects.equals(encodedPassword, encode(rawPassword));
+		String encodePwd = encode(rawPassword);
+		return encodedPassword.equals(encodePwd);
 	}
 }

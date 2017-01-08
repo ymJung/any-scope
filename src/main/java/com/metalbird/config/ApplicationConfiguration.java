@@ -41,7 +41,7 @@ public class ApplicationConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName(env.getProperty("spring.datasource.driver-class-name"));
-		dataSource.setUrl(env.getProperty("spring.datasource.url"));
+		dataSource.setUrl(env.getProperty("db.url.scheme"));
 		dataSource.setUsername(env.getProperty("spring.datasource.username"));
 		dataSource.setPassword(env.getProperty("spring.datasource.password"));
 		return dataSource;
