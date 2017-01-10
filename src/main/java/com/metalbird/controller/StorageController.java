@@ -6,9 +6,9 @@ package com.metalbird.controller;
 import java.util.Date;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.metalbird.controller.model.LoginAccountDto;
@@ -17,7 +17,7 @@ import com.metalbird.controller.model.LoginAccountDto;
  * @author YoungMin
  *
  */
-@Controller
+@RestController
 public class StorageController {
 	@RequestMapping(value="/storage/view", method=RequestMethod.GET)
 	public ModelAndView view(@AuthenticationPrincipal LoginAccountDto userDetails) {
