@@ -5,17 +5,16 @@ package com.metalbird.controller;
 
 import java.util.Date;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author YoungMin
  *
  */
-@Controller
-@RequestMapping
+@RestController
 public class OpenController {
 	@RequestMapping(value="/open/view", method=RequestMethod.GET)
 	public ModelAndView main() {
