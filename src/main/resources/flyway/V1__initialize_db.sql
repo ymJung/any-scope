@@ -4,12 +4,13 @@ CREATE TABLE `user_account` (
   `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'id seq',
   `account` varchar(50) NOT NULL COMMENT 'account info',
   `password` varchar(255) NOT NULL COMMENT 'pass word hash info',
+  `displayName` varchar(255) NOT NULL,
   `live` tinyint(1) DEFAULT '1' COMMENT 'NORMAL(0),DELETE(1)',
   `grade` varchar(20) DEFAULT 'NORMAL' COMMENT 'NORMAL, HEAVY, ADMIN',
   `role` varchar(50) DEFAULT NULL COMMENT 'user role',
   `modifiedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `createdAt` datetime NOT NULL,
+  `createdAt` datetime NOT NULL COMMENT 'display name',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `account_UNIQUE` (`account`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='user account information.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='user account information.';
