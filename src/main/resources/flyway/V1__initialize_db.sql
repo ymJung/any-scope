@@ -14,3 +14,24 @@ CREATE TABLE `user_account` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `account_UNIQUE` (`account`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='user account information.';
+CREATE TABLE `board` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'id value',
+  `createdId` bigint(11) NOT NULL COMMENT 'created user id',
+  `modifiedId` bigint(11) NOT NULL COMMENT 'modified user id',
+  `title` varchar(255) DEFAULT NULL COMMENT 'title',
+  `content` text COMMENT 'content',
+  `createdAt` datetime NOT NULL COMMENT 'created date',
+  `modifiedAt` datetime NOT NULL COMMENT 'modified date',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='board content datas ';
+CREATE  TABLE `info`.`board_comment` (
+  `id` BIGINT(11) NOT NULL AUTO_INCREMENT COMMENT 'seq' ,
+  `boardId` BIGINT(11) NOT NULL COMMENT 'board id ' ,
+  `ipAddress` VARCHAR(50) NULL COMMENT 'create user ip address' ,
+  `content` TEXT NULL COMMENT 'content' ,
+  `createdAt` DATETIME NOT NULL COMMENT 'created date' ,
+  `modifiedAt` DATETIME NOT NULL COMMENT 'modified date' ,
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
+COMMENT = 'board comment info';

@@ -20,7 +20,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception	{
-		web.ignoring().antMatchers("/css/**", "/script/**", "/error", "/");
+		web.ignoring().antMatchers("/css/**", "/script/**", "/error", "/", "/board/**");
 	}
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
