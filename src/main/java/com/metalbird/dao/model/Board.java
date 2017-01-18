@@ -115,4 +115,5 @@ public class Board {
 	public void setUserAccount(UserAccount userAccount) {
 		this.userAccount = userAccount;
 	}
+	
 }
