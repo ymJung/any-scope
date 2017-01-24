@@ -18,10 +18,4 @@ public class BoardCommentDto extends BoardComment {
 	public BoardCommentDto(BoardComment boardComment) {
 		BeanUtils.copyProperties(boardComment, this, "board");
 	}
-	public String getBody() {
-		return getContent();
-	}
-	public Long getPostId() {
-		return getBoardId();
-	}	
 }

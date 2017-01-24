@@ -11,10 +11,4 @@ public class BoardDto extends Board {
 	public BoardDto(Board board) {
 		BeanUtils.copyProperties(board, this, "userAccount");
 	}
-	public String getBody() {
-		return getContent();
-	}
-	public Long getUserId() {
-		return getCreatedId();
-	}
 }
