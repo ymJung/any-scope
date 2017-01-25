@@ -35,3 +35,14 @@ CREATE  TABLE `info`.`board_comment` (
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) )
 COMMENT = 'board comment info';
+CREATE TABLE `board_image` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `boardId` bigint(11) DEFAULT NULL,
+  `displayName` varchar(255) NOT NULL,
+  `hashValue` varchar(500) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `modifiedAt` datetime NOT NULL,
+  `createdId` bigint(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='image ';
