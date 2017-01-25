@@ -31,8 +31,6 @@ public class BoardImage {
 	@Column(insertable=false, updatable=false)
 	private long boardId;
 	@Column
-	private String src;
-	@Column
 	private String displayName;
 	@Column
 	private String hashValue;
