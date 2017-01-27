@@ -52,6 +52,8 @@ public class Board {
 	
 	@OneToMany(mappedBy="board")
 	private List<BoardComment> boardCommentList = new ArrayList<>();
+	@OneToMany(mappedBy="image")
+	private List<BoardImage> boardImageList = new ArrayList<>();
 
 	public long getId() {
 		return id;

@@ -47,4 +47,75 @@ public class BoardImage {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="boardId")
 	private Board board;
+
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public long getBoardId() {
+		return boardId;
+	}
+
+
+	public void setBoardId(long boardId) {
+		this.boardId = boardId;
+	}
+
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
+
+
+	public String getHashValue() {
+		return hashValue;
+	}
+
+
+	public void setHashValue(String hashValue) {
+		this.hashValue = hashValue;
+	}
+
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+
+	public Date getModifiedAt() {
+		return modifiedAt;
+	}
+
+
+	public void setModifiedAt(Date modifiedAt) {
+		this.modifiedAt = modifiedAt;
+	}
+
+
+	public Board getBoard() {
+		return board;
+	}
+
+
+	public void setBoard(Board board) {
+		this.board = board;
+	}
+	
 }
