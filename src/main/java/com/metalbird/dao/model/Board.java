@@ -117,5 +117,21 @@ public class Board {
 	public void setUserAccount(UserAccount userAccount) {
 		this.userAccount = userAccount;
 	}
+
+	public List<BoardComment> getBoardCommentList() {
+		return boardCommentList;
+	}
+
+	public void setBoardCommentList(List<BoardComment> boardCommentList) {
+		this.boardCommentList = boardCommentList;
+	}
+
+	public List<BoardImage> getBoardImageList() {
+		return boardImageList;
+	}
+
+	public void setBoardImageList(List<BoardImage> boardImageList) {
+		this.boardImageList = boardImageList;
+	}
 	
 }
