@@ -50,9 +50,9 @@ public class Board {
 	@JoinColumn(name="createdId")
 	private UserAccount userAccount;
 	
-	@OneToMany(mappedBy="board")
+	@OneToMany(mappedBy="board", fetch=FetchType.LAZY)
 	private List<BoardComment> boardCommentList = new ArrayList<>();
-	@OneToMany(mappedBy="image")
+	@OneToMany(mappedBy="board", fetch=FetchType.LAZY)
 	private List<BoardImage> boardImageList = new ArrayList<>();
 
 	public long getId() {

@@ -3,6 +3,8 @@ package com.metalbird.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -23,6 +25,7 @@ public class BoardService {
 	@Autowired
 	private BoardCommentRepository boardCommentRepository;
 
+	@Transactional
 	public BoardDto getById(long id) throws NotFoundException {
 		Board board = boardRepository.findOneById(id);
 		if (board == null) {
@@ -30,7 +33,8 @@ public class BoardService {
 		}
 		return new BoardDto(board);
 	}
-
+	
+	@Transactional
 	public List<BoardCommentDto> getBoardCommentByBoardId(long boardId) throws NotFoundException {
 		List<BoardComment> list = boardCommentRepository.findAllByBoardId(boardId);
 		if (CollectionUtils.isEmpty(list)) {
